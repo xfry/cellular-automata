@@ -70,7 +70,7 @@ this.location = new Vector(130,50); //cada valor numerico representa x ó y
 this.speed = new Vector(1,1); 			//x = 1, y = 1
 ```
 Esto nos ayudaría a simplificar nuestro código y proporcionar un conjunto de funciones para ejecutar operaciones matemáticas que ocurren una y otra vez cuando programamos movimientos, ejemplo:
-![movimiento vector] (http://natureofcode.com/book/imgs/chapter01/ch01_02.png)
+![movimiento vector](http://natureofcode.com/book/imgs/chapter01/ch01_02.png)
 
 	Vector(-15, 3)			Camina quince pasos hacia el oeste; Gire y camine tres pasos hacia el norte.
 	Vector(3, 4)				Camine tres pasos hacia el este; Gire y camine cinco pasos hacia el norte.
