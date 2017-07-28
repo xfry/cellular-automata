@@ -13,7 +13,7 @@ Cubriremos algunas de las funcionalidades de un vector de manera practica, media
 
 Las funcionalidades a desmotrar mediante ejercicios concretos en este capítulo son:
 
-- [ ] add() — Adición de un vectores
+- [x] add() — Adición de un vectores
 - [ ] sub() — Resta de vectores
 - [ ] mult() — Escalar un vector mediante el uso de multiplicación
 - [ ] div() —  Escalar el vector mediante el uso de División
