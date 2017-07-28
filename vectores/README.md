@@ -1,9 +1,9 @@
 # VECTORES
 
 ## Introducción
-El objetivo de desarrollar este capítulo de [The Nature Of Code](http://natureofcode.com) es poder entender el uso de **_vectores_** a la hora de agregar desplazamiento, velocidad y posición a un objeto en una simulación del mundo real, ya sea 2D o 3D.
+El objetivo de desarrollar este capítulo de [The Nature Of Code](http://natureofcode.com) es poder entender el uso de **_vectores_** a la hora de agregar desplazamiento, velocidad y posición a un objeto en una simulación del mundo real, ya sea 2D o 3D. (Aquí su definición)[https://es.wikipedia.org/wiki/Vector]
 
-Los vectores típicamente se escriben en negrilla o también con una letra que contiene una flecha arriba. Esto permite que podamos distinguir entre un **_vector_** y un **_escalar_** -Escalar se refiere a un valor, semejante a enteros o números de punto flotante- así que en este ejercicio usaremos la notación de flecha arriba.
+Los vectores típicamente se escriben en negrilla o también con una letra que contiene una flecha arriba. Esto permite que podamos distinguir entre un **_vector_** y un **_escalar_** -Escalar se refiere a un valor, semejante a enteros o números de punto flotante- así que en estos ejercicios se usará la notación de flecha arriba.
 
 ![vector](https://i.stack.imgur.com/Gz06o.png)
 
@@ -30,3 +30,46 @@ Las funcionalidades a desmotrar mediante ejercicios concretos en este capítulo 
 - [ ] cross() — the cross product of two vectors (only relevant in three imensions)
 - [ ] random2D() - crear un vector bidimensional aleatorio
 - [ ] random3D() - crear un vector tridimensional aleatorio
+
+## Configurando el entorno html5
+Usaremos el canvas html5 y para ello, debemos crear nuestro mundo `world` o plano en el que vamos a agregar nuestros objetos como por ejemplo una bola.
+
+	TBD
+
+## Suma de vectores
+Imagina una bola que se desplaza de un lugar a otro en un plano bidimensional. Esta bola tendría que contar con algunas propiedades para poder desplazarse de un punto `A` a un punto `B` y dentro de esas propiedades encontraríamos **_velocidad_** **_ubicación_** así que si este objeto se modela en javascript quedaría así:
+
+```javascript
+var ball = {
+	radio: 20,
+	posX: 200, 		//ubicación en el eje x
+	posY: 450, 		//ubicación en el eje y
+	velocityX: 2,
+	velocityY: 2
+}
+```
+Una vez configurado el objeto bola para moverlo tendríamos que alterar su posición en `x` ó `y` sumándole velocidad.
+
+```javascript
+ball.x = ball.x + ball.velocity;
+ball.y = ball.y + ball.velocity;
+```
+En una representación más compleja del objeto bola, podríamos imaginar tener muchas más variables:
+
+	Aceleration								_xaceleration_ _yaceleration_		
+	Ubicación de un Objetivo	_xtarget_ _ytarget_	
+	Viento										_xwind _ywind_
+	fricción									_xfriction_ _yfriction_
+
+Y así inicia a quedarnos claro que por cada concepto en el plano (Viento, Aceleración, Fricción, Ubicación) necesitaríamos de a dos variables. Esto porque es un mundo bidimensional, pero si fuera tridimensional necesitaríamos de a tres variables para cada concepto.
+
+**Peor espera, ¿Sería genial si reducimos todo este código a unas pocas variables?** Como por ejemplo:
+
+```javascript
+this.location = new Vector(x,y,1);
+this.speed = new Vector(1,1,1);
+```
+Esto nos ayudaría a simplificar nuestro código y proporcionar un conjunto de funciones para ejecutar operaciones matemáticas que ocurren una y otra vez cuando programamos movimientos.
+
+Por amor a la simplicidad, vamos a mantener este ejercicio en un plano bidimensional, quiza más adelante realicemos ejercicios tridimensionales.
+
